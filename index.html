@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="favicon-humanize.png">
+<link rel="apple-touch-icon" href="favicon-humanize.png">
+<title>Proposta Comercial · Ômega Infra Elétrica · Humanize</title>
+<meta name="description" content="Estratégia integrada de marketing digital para a Ômega Infra Elétrica — Humanize Marketing Digital.">
+<style>
+  :root{
+    /* Humanize — identidade institucional */
+    --navy-900:#050b1e;
+    --navy-800:#081226;
+    --navy-700:#0c1a36;
+    --blue-500:#1ea7ff;
+    --blue-400:#4fc3ff;
+    --blue-glow:#00c3ff;
+    --orange-500:#ff7a30;
+    --orange-400:#ffa15c;
+    --white:#ffffff;
+    --gray-050:#f7f9fc;
+    --gray-100:#eef1f7;
+    --gray-300:#cfd6e4;
+    --gray-600:#5b6478;
+    --dark-text:#0b1633;
+
+    /* Ômega — amostrada do logotipo e do site da empresa */
+    --omega-navy:#101b32;
+    --omega-navy-2:#162440;
+    --steel-400:#8fa3c4;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{background:var(--navy-900); scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+  body{
+    font-family:'Segoe UI', Arial, Helvetica, sans-serif; color:var(--dark-text);
+    background:var(--navy-900);
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%; display:block;}
+
+  .wrap{ max-width:560px; margin:0 auto; background:var(--white); min-height:100vh; position:relative; overflow:hidden;
+    box-shadow:0 0 60px rgba(0,0,0,.5); }
+
+  section{ position:relative; padding:52px 22px; overflow:hidden; }
+  .dark{ background:linear-gradient(160deg,var(--navy-900) 0%, var(--navy-800) 55%, var(--navy-700) 100%); color:#fff; }
+  .omega{ background:linear-gradient(165deg,var(--omega-navy) 0%, var(--omega-navy-2) 100%); color:#fff; }
+  .light{ background:var(--gray-050); color:var(--dark-text); }
+  .white{ background:var(--white); color:var(--dark-text); }
+
+  .glow{ position:absolute; border-radius:50%; filter:blur(50px); opacity:.35; pointer-events:none; }
+  .glow-blue{ background:radial-gradient(circle, var(--blue-glow), transparent 70%); }
+  .glow-orange{ background:radial-gradient(circle, var(--orange-500), transparent 70%); }
+  .lines{ position:absolute; inset:0; opacity:.07; pointer-events:none;
+    background-image:repeating-linear-gradient(115deg, var(--blue-400) 0px, var(--blue-400) 1px, transparent 1px, transparent 60px); }
+  .z{ position:relative; z-index:2; }
+
+  .progress{ position:fixed; top:0; left:0; height:3px; width:0;
+    background:linear-gradient(90deg,var(--blue-500),var(--orange-500)); z-index:99; transition:width .1s linear; }
+
+  .topbar{ display:flex; align-items:center; justify-content:space-between; gap:14px; }
+  .humanize-logo{ height:42px; width:auto; }
+  .omega-logo{ height:46px; width:auto; border-radius:8px; border:1px solid rgba(255,255,255,.12); }
+
+  .pill{ display:inline-flex; align-items:center; gap:6px; padding:6px 13px; border-radius:999px; font-size:10.5px; font-weight:800; letter-spacing:.6px; text-transform:uppercase; }
+  .pill-orange{ background:rgba(255,122,48,.15); color:var(--orange-400); }
+
+  .eyebrow{ text-transform:uppercase; letter-spacing:3px; font-size:11px; font-weight:800; color:var(--blue-400); }
+  .light .eyebrow, .white .eyebrow{ color:var(--blue-500); }
+
+  h1{ font-size:30px; font-weight:800; line-height:1.14; margin-top:16px; letter-spacing:-.5px; }
+  h2{ font-size:22px; font-weight:800; line-height:1.24; margin-top:6px; }
+  .accent{ color:var(--blue-400); }
+  .light .accent, .white .accent{ color:var(--blue-500); }
+
+  .lead{ font-size:15px; line-height:1.6; color:#c4cee0; margin-top:14px; }
+  .light .lead, .white .lead{ color:var(--gray-600); }
+  .divider{ width:42px; height:3px; background:linear-gradient(90deg,var(--blue-400),var(--orange-400)); border-radius:3px; margin:16px 0; }
+
+  .remate{ margin-top:28px; border-left:3px solid var(--orange-500); padding:4px 0 4px 16px;
+    font-size:16px; font-weight:800; line-height:1.4; color:var(--dark-text); }
+  .dark .remate, .omega .remate{ color:#fff; }
+
+  svg.icon{ width:22px; height:22px; stroke:currentColor; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  .icon-badge{ width:42px;height:42px;border-radius:12px; display:flex;align-items:center;justify-content:center; background:rgba(30,167,255,.12); color:var(--blue-500); flex:none; }
+  .icon-badge.orange{ background:rgba(255,122,48,.13); color:var(--orange-500); }
+
+  /* ----- cabeçalho de fase: numeral grande + trilha 1-2-3 ----- */
+  .fase-cab{ display:flex; align-items:flex-start; gap:18px; }
+  .fase-num{ font-size:62px; font-weight:800; line-height:.82; letter-spacing:-3px;
+    color:transparent; -webkit-text-stroke:2px var(--blue-500); flex:none; }
+  .dark .fase-num, .omega .fase-num{ -webkit-text-stroke-color:var(--blue-400); }
+  .trilha{ display:flex; align-items:center; gap:7px; margin-top:14px; }
+  .trilha i{ width:26px; height:4px; border-radius:3px; background:var(--gray-300); display:block; font-style:normal; }
+  .dark .trilha i, .omega .trilha i{ background:rgba(255,255,255,.18); }
+  .trilha i.on{ background:linear-gradient(90deg,var(--blue-500),var(--orange-500)); width:44px; }
+  .trilha span{ font-size:10px; font-weight:800; letter-spacing:1.6px; text-transform:uppercase; color:var(--gray-600); margin-left:5px; }
+  .dark .trilha span, .omega .trilha span{ color:var(--steel-400); }
+
+  /* ----- grade de blocos curtos ----- */
+  .feat{ display:grid; grid-template-columns:1fr; gap:14px; margin-top:22px; }
+  .feat .f{ background:var(--white); border:1px solid var(--gray-100); border-radius:14px; padding:18px; box-shadow:0 6px 18px rgba(11,22,51,.06); }
+  .feat .f .icon-badge{ width:38px; height:38px; border-radius:11px; margin-bottom:12px; }
+  .feat .f .icon-badge svg.icon{ width:20px; height:20px; }
+  .feat .f b{ display:block; font-size:14.5px; font-weight:800; line-height:1.25; color:var(--dark-text); }
+  .feat .f span{ display:block; font-size:12.8px; color:var(--gray-600); line-height:1.5; margin-top:6px; }
+  .dark .feat .f, .omega .feat .f{ background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.14); box-shadow:none; }
+  .dark .feat .f b, .omega .feat .f b{ color:#fff; }
+  .dark .feat .f span, .omega .feat .f span{ color:#a8b4d0; }
+  .dark .feat .f .icon-badge, .omega .feat .f .icon-badge{ background:rgba(79,195,255,.15); color:var(--blue-400); }
+  .dark .feat .f .icon-badge.orange, .omega .feat .f .icon-badge.orange{ background:rgba(255,161,92,.15); color:var(--orange-400); }
+
+  /* ----- cadeia da especificação: quem decide o que ----- */
+  .cadeia{ display:grid; grid-template-columns:1fr; gap:10px; margin-top:22px; align-items:stretch; }
+  .elo{ background:var(--white); border:1px solid var(--gray-100); border-radius:14px; padding:16px; text-align:center;
+    box-shadow:0 6px 18px rgba(11,22,51,.06); position:relative; }
+  .elo .papel{ font-size:10px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--gray-600); }
+  .elo b{ display:block; font-size:16px; margin-top:6px; color:var(--dark-text); }
+  .elo span{ display:block; font-size:12px; color:var(--gray-600); margin-top:5px; line-height:1.45; }
+  .elo.alvo{ border:2px solid var(--orange-500); background:rgba(255,122,48,.06); }
+  .elo.alvo .papel{ color:var(--orange-500); }
+  .seta{ display:flex; align-items:center; justify-content:center; color:var(--gray-300); font-size:20px; font-weight:800; }
+
+  /* ----- número de impacto ----- */
+  .stat{ margin-top:24px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16);
+    border-radius:18px; padding:26px 22px; display:grid; grid-template-columns:1fr; gap:18px; align-items:center; }
+  .stat .big{ font-size:44px; font-weight:800; color:#fff; line-height:1; letter-spacing:-1.5px; }
+  .stat .big small{ display:block; font-size:12.5px; font-weight:700; color:var(--blue-400); letter-spacing:1.4px; text-transform:uppercase; margin-top:8px; }
+  .stat p{ font-size:13.5px; line-height:1.55; color:#c4cee0; }
+  .stat .fonte{ font-size:10.5px; color:#7c88a8; margin-top:8px; }
+
+  /* barra de participação do Google */
+  .barra-share{ margin-top:14px; }
+  .barra-share .pista{ height:12px; border-radius:7px; background:rgba(255,255,255,.12); overflow:hidden; }
+  .barra-share .cheio{ height:100%; width:90%; border-radius:7px; background:linear-gradient(90deg,var(--blue-500),var(--blue-400)); }
+  .barra-share .leg{ display:flex; justify-content:space-between; font-size:10.5px; color:#8fa3c4; margin-top:7px; }
+
+  /* ----- fluxo final: do anúncio ao pedido ----- */
+  .fluxo{ display:grid; grid-template-columns:1fr; gap:9px; margin-top:22px; }
+  /* o cartão é branco mesmo dentro da seção escura, então a cor do texto
+     precisa ser declarada aqui — senão o título herda o branco e some */
+  .passo{ display:flex; align-items:center; gap:12px; background:var(--white); border:1px solid var(--gray-100);
+    border-radius:12px; padding:13px 15px; box-shadow:0 5px 14px rgba(11,22,51,.05); color:var(--dark-text); }
+  .passo .pn{ width:26px; height:26px; flex:none; border-radius:50%; background:var(--blue-500); color:#fff;
+    font-size:12px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+  .passo:last-child .pn{ background:var(--orange-500); }
+  .passo b{ font-size:13.5px; display:block; }
+  .passo span{ font-size:11.8px; color:var(--gray-600); display:block; margin-top:2px; line-height:1.4; }
+
+  /* ----- antes e depois ----- */
+  .ad{ margin-top:22px; display:grid; grid-template-columns:1fr; gap:16px; }
+  .ad-item{ border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.05); }
+  .light .ad-item, .white .ad-item{ border-color:var(--gray-100); background:var(--white); box-shadow:0 6px 18px rgba(11,22,51,.06); }
+  .ad-tag{ display:flex; align-items:center; gap:8px; padding:11px 14px; font-size:10.5px; font-weight:800; letter-spacing:1.4px; text-transform:uppercase; }
+  .ad-tag.agora{ background:rgba(255,255,255,.08); color:var(--steel-400); }
+  .ad-tag.conceito{ background:rgba(30,167,255,.16); color:var(--blue-400); }
+  .light .ad-tag.agora, .white .ad-tag.agora{ background:var(--gray-100); color:var(--gray-600); }
+  .light .ad-tag.conceito, .white .ad-tag.conceito{ background:rgba(30,167,255,.12); color:var(--blue-500); }
+  .ad-item img{ width:100%; height:300px; object-fit:cover; object-position:top; background:#0d1730; }
+  .ad-item img.inteira{ height:auto; object-fit:contain; background:#fff; }
+  .ad-item img.fone{ height:auto; object-fit:contain; background:#000; }
+  /* ---------- moldura de celular ----------
+     O print já traz a barra de status do iPhone, então a moldura desenha só
+     o corpo, a borda metálica, a "ilha" e os botões laterais. Aqui o aparelho
+     é dimensionado pela LARGURA, porque a página é responsiva. */
+  .palco{ display:flex; justify-content:center; align-items:center; padding:30px 18px;
+    background:radial-gradient(ellipse 70% 60% at 50% 42%, rgba(79,195,255,.16), transparent 70%), #0a1330; }
+  .light .palco, .white .palco{ background:radial-gradient(ellipse 70% 60% at 50% 42%, rgba(30,167,255,.12), transparent 70%), #eef2f8; }
+  .celular{ position:relative; width:min(78%, 290px); padding:9px; border-radius:15% / 7%;
+    background:linear-gradient(145deg,#3a3f4a 0%,#14161b 22%,#0b0c0f 60%,#22252c 100%);
+    box-shadow:inset 0 0 0 1.5px #4a505d, inset 0 0 0 3px #0b0c0f, 0 22px 44px rgba(0,0,0,.45), 0 6px 14px rgba(0,0,0,.3); }
+  .light .celular, .white .celular{ box-shadow:inset 0 0 0 1.5px #4a505d, inset 0 0 0 3px #0b0c0f, 0 22px 44px rgba(11,22,51,.25), 0 6px 14px rgba(11,22,51,.15); }
+  .celular::before, .celular::after{ content:""; position:absolute; width:3px; border-radius:2px; background:#2a2e37; }
+  .celular::before{ left:-3px; top:19%; height:11%; }
+  .celular::after{ right:-3px; top:25%; height:15%; }
+  .tela{ position:relative; border-radius:12.5% / 5.8%; overflow:hidden; background:#000; }
+  .ad-item .tela img{ display:block; width:100%; height:auto; object-fit:fill; }
+  .ilha{ position:absolute; top:1.25%; left:50%; transform:translateX(-50%); width:29%; height:3.9%; background:#000; border-radius:999px; }
+
+  .ad-cap{ padding:12px 14px; font-size:12px; line-height:1.5; color:#a8b4d0; }
+  .ad-cap b{ color:#fff; }
+  .light .ad-cap, .white .ad-cap{ color:var(--gray-600); }
+  .light .ad-cap b, .white .ad-cap b{ color:var(--dark-text); }
+
+  /* ----- nota ----- */
+  .nota{ margin-top:22px; background:rgba(255,122,48,.08); border:1px solid rgba(255,122,48,.25); border-radius:12px; padding:13px 15px; font-size:12px; line-height:1.5; color:var(--gray-600); }
+  .nota b{ color:var(--orange-500); display:block; margin-bottom:4px; font-size:10.5px; letter-spacing:1.2px; text-transform:uppercase; }
+  /* <b> dentro da nota vira rótulo de bloco, então o destaque no meio do
+     texto usa <strong> */
+  .nota strong{ font-weight:800; color:var(--dark-text); }
+  .dark .nota strong, .omega .nota strong{ color:#fff; }
+  .dark .nota, .omega .nota{ color:#c4cee0; }
+
+  /* ----- marketing x vendas ----- */
+  .duas{ display:grid; grid-template-columns:1fr; gap:12px; margin-top:20px; }
+  .dcol{ border-radius:14px; padding:18px; border:1px solid var(--gray-100); background:var(--white); box-shadow:0 6px 18px rgba(11,22,51,.06); }
+  .dcol.b{ background:var(--gray-050); }
+  .dcol .dt{ font-size:11px; font-weight:800; letter-spacing:1.3px; text-transform:uppercase; color:var(--blue-500); }
+  .dcol.b .dt{ color:var(--orange-500); }
+  .dcol p{ font-size:13px; line-height:1.55; color:var(--gray-600); margin-top:9px; }
+
+  /* ----- investimento ----- */
+  .preco{ margin-top:26px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16); border-radius:20px; padding:32px 24px; text-align:center; }
+  .preco .de-lbl{ font-size:10.5px; font-weight:800; letter-spacing:1.6px; text-transform:uppercase; color:#8fa3c4; }
+  .preco .de{ font-size:23px; font-weight:800; color:#8fa3c4; margin-top:5px; text-decoration:line-through; text-decoration-thickness:2px; }
+  .preco .sep{ width:54px; height:1px; background:rgba(255,255,255,.18); margin:22px auto; }
+  .preco .por-lbl{ font-size:11px; font-weight:800; letter-spacing:1.8px; text-transform:uppercase; color:var(--blue-400); }
+  .preco .por{ font-size:54px; font-weight:800; color:#fff; line-height:1; margin-top:10px; letter-spacing:-2px; }
+  .preco .por small{ font-size:17px; font-weight:700; color:#a8b4d0; letter-spacing:0; }
+  .preco .eco{ display:inline-block; margin-top:18px; background:rgba(255,122,48,.16); border:1px solid rgba(255,122,48,.35);
+    color:var(--orange-400); font-size:12.5px; font-weight:800; padding:9px 16px; border-radius:999px; }
+  .preco .depois{ margin-top:20px; padding-top:18px; border-top:1px solid rgba(255,255,255,.14);
+    font-size:13px; line-height:1.5; color:#a8b4d0; }
+  .preco .depois b{ color:#fff; }
+
+  /* condições comerciais */
+  .cond{ display:grid; grid-template-columns:1fr; gap:12px; margin-top:20px; }
+  .cond .c{ background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:14px;
+    padding:16px; display:flex; gap:13px; align-items:flex-start; }
+  .cond .c svg.icon{ width:20px; height:20px; flex:none; color:var(--blue-400); margin-top:1px; }
+  .cond .c:nth-child(even) svg.icon{ color:var(--orange-400); }
+  .cond .c b{ display:block; font-size:13.5px; color:#fff; line-height:1.3; }
+  .cond .c span{ display:block; font-size:12px; color:#a8b4d0; line-height:1.45; margin-top:4px; }
+
+  .cta-box{ margin-top:26px; background:rgba(255,255,255,.05); border-radius:16px; padding:22px; border:1px solid rgba(255,255,255,.12); }
+  .cta-title{ font-size:17px; font-weight:800; margin-bottom:14px; }
+  .cta-btn{ display:flex; align-items:center; justify-content:center; gap:9px; background:#25D366; color:#fff; font-weight:800; font-size:14.5px; padding:15px; border-radius:12px; text-decoration:none; box-shadow:0 8px 20px rgba(37,211,102,.35); }
+  .cta-info{ margin-top:16px; display:flex; flex-direction:column; gap:9px; font-size:12px; color:#a8b4d0; }
+  .cta-info span{ display:flex; align-items:center; gap:7px; }
+
+  .assinatura{ margin-top:30px; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; }
+
+  .btn-print{ display:inline-flex; align-items:center; gap:8px; margin-top:22px; background:transparent; border:1px solid rgba(255,255,255,.25); color:#dbe3f2; font-size:12.5px; font-weight:700; padding:11px 16px; border-radius:11px; cursor:pointer; font-family:inherit; }
+  .btn-print:hover{ background:rgba(255,255,255,.07); }
+  .baixar{ display:flex; gap:10px; flex-wrap:wrap; }
+  .baixar .btn-print{ margin-top:0; text-decoration:none; }
+  .baixar .btn-print:first-child{ background:var(--blue-500); border-color:var(--blue-500); color:#fff; }
+  .baixar-msg{ font-size:12px; color:#a8b4d0; margin-top:8px; min-height:1em; }
+  .btn-print:focus-visible{ outline:2px solid var(--blue-400); outline-offset:2px; }
+
+  footer{ text-align:center; padding:22px; font-size:10.5px; color:#7c88a8; letter-spacing:1.5px; text-transform:uppercase; background:var(--navy-900); }
+
+  .sticky-cta{ position:sticky; bottom:0; z-index:50; background:rgba(5,11,30,.92); backdrop-filter:blur(8px); padding:12px 16px; border-top:1px solid rgba(255,255,255,.1); display:flex; }
+  .sticky-cta a{ flex:1; display:flex; align-items:center; justify-content:center; gap:8px; background:#25D366; color:#fff; font-weight:800; font-size:14px; padding:12px; border-radius:11px; text-decoration:none; }
+  .sticky-cta a:focus-visible{ outline:2px solid #fff; outline-offset:2px; }
+
+  /* Entrada suave das seções — só vale se o JS tiver marcado o <html>.
+     Sem JS o documento abre inteiro: proposta não pode abrir em branco. */
+  .rv-ativo .rv{ opacity:0; transform:translateY(16px); transition:opacity .55s ease, transform .55s ease; }
+  .rv-ativo .rv.on{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce){
+    .rv-ativo .rv{ opacity:1; transform:none; transition:none; }
+    .progress{ display:none; }
+  }
+
+  /* ---------- tablet ---------- */
+  @media (min-width:600px){
+    body{ padding:24px 0; }
+    section{ padding:64px 40px; }
+    h1{ font-size:40px; }
+    h2{ font-size:26px; }
+    .feat{ grid-template-columns:1fr 1fr; }
+    .duas{ grid-template-columns:1fr 1fr; }
+    .ad{ grid-template-columns:1fr 1fr; }
+    .cadeia{ grid-template-columns:1fr auto 1fr auto 1fr; }
+    .fluxo{ grid-template-columns:1fr 1fr; }
+    .cond{ grid-template-columns:1fr 1fr; }
+    .stat{ grid-template-columns:auto 1fr; gap:28px; }
+  }
+
+  /* ---------- desktop ---------- */
+  @media (min-width:980px){
+    .wrap{ max-width:1080px; }
+    section{ padding:104px 76px; }
+    h1{ font-size:62px; line-height:1.06; }
+    h2{ font-size:34px; }
+    .lead{ font-size:17px; max-width:60ch; }
+    .remate{ font-size:21px; max-width:52ch; }
+    .fase-num{ font-size:92px; -webkit-text-stroke-width:2.5px; }
+    .feat{ grid-template-columns:repeat(4,1fr); gap:18px; }
+    .ad{ gap:20px; }
+    .fluxo{ grid-template-columns:repeat(4,1fr); }
+    .stat .big{ font-size:62px; }
+    .preco{ padding:52px 40px; }
+    .preco .por{ font-size:78px; }
+    .preco .de{ font-size:28px; }
+  }
+
+  /* ---------- impressão: uma seção por página ---------- */
+  @media print{
+    @page{ size:A4; margin:12mm; }
+    html,body{ background:#fff; }
+    body{ padding:0; }
+    .wrap{ max-width:none; box-shadow:none; }
+    section{ padding:16px 18px; page-break-after:always; break-after:page; page-break-inside:avoid; break-inside:avoid; }
+    section:last-of-type{ page-break-after:auto; break-after:auto; }
+    .dark, .omega{ background:#0d1a35 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    .glow, .lines, .progress, .sticky-cta, .btn-print, .baixar, .baixar-msg, footer{ display:none !important; }
+    .rv{ opacity:1 !important; transform:none !important; }
+    h1{ font-size:40px; }
+    h2{ font-size:20px; }
+    .lead{ font-size:12px; margin-top:9px; }
+    .divider{ margin:9px 0; }
+    .fase-num{ font-size:46px; }
+    .feat{ gap:9px; margin-top:14px; }
+    .feat .f{ padding:11px; }
+    .feat .f b{ font-size:12px; }
+    .feat .f span{ font-size:10.5px; margin-top:4px; }
+    .feat .f .icon-badge{ width:28px; height:28px; margin-bottom:7px; }
+    .cadeia{ margin-top:14px; gap:7px; }
+    .elo{ padding:10px; }
+    .elo b{ font-size:12.5px; }
+    .elo span{ font-size:10px; }
+    .stat{ margin-top:14px; padding:14px 16px; }
+    .stat .big{ font-size:32px; }
+    .stat p{ font-size:11px; }
+    .fluxo{ margin-top:14px; gap:6px; }
+    .passo{ padding:9px 11px; }
+    .passo b{ font-size:11.5px; }
+    .passo span{ font-size:10px; }
+    .ad{ gap:9px; margin-top:12px; }
+    .ad-item img{ height:120px; }
+    .ad-item img.inteira{ height:120px; object-fit:contain; object-position:top; }
+    /* print de celular é alto e estreito: a 120px não se lê nada */
+    .ad-item img.fone{ height:300px; object-fit:contain; object-position:top; }
+    /* a seção 4 carrega dois pares de imagem; os prints do Google ficam
+       mais baixos para tudo caber numa página */
+    .ad-item img.fone.google{ height:128px; }
+    /* no papel a moldura encolhe junto: o palco quase sem respiro e o aparelho
+       com largura fixa, calculada para ocupar a mesma altura que o print tinha */
+    .palco{ padding:5px 0; }
+    .celular{ width:136px; padding:4px; box-shadow:inset 0 0 0 1px #4a505d; }
+    .celular::before, .celular::after{ display:none; }
+    .celular.google{ width:56px; padding:2px; }
+    .ad-item img, .ad-item img.inteira{ height:105px; }
+    .ad{ margin-top:8px; }
+    .barra-share{ display:none; }
+    .fase-num{ font-size:38px; }
+    section{ padding:12px 16px; }
+    section .eyebrow[style]{ margin-top:10px !important; }
+    .feat .f span{ font-size:9.5px; }
+    .fluxo{ margin-top:8px; }
+    .remate{ margin-top:10px; }
+    .nota{ margin-top:8px; padding:7px 10px; font-size:9.5px; }
+    /* No A4 os cartões e a trilha cabem em uma linha só: em duas colunas
+       eles empurravam o fim da seção 4 para uma sétima página */
+    .feat{ grid-template-columns:repeat(4,1fr); }
+    .feat .f .icon-badge{ display:none; }
+    .fluxo{ grid-template-columns:repeat(4,1fr); }
+    .passo{ padding:8px 9px; gap:8px; }
+    .passo .pn{ width:20px; height:20px; font-size:10px; }
+    .stat{ padding:12px 14px; gap:16px; }
+    .stat .big{ font-size:28px; }
+    .stat .big small{ font-size:9.5px; margin-top:5px; }
+    .barra-share{ margin-top:8px; }
+    .stat .fonte{ font-size:9px; margin-top:5px; }
+    .ad-tag{ padding:6px 10px; font-size:8.5px; }
+    .ad-cap{ padding:7px 10px; font-size:9.5px; }
+    .remate{ font-size:13px; margin-top:14px; }
+    .nota{ margin-top:12px; padding:9px 11px; font-size:10px; }
+    .duas{ margin-top:12px; }
+    .dcol{ padding:12px; }
+    .dcol p{ font-size:11px; }
+    .preco{ margin-top:14px; padding:18px 18px; }
+    .preco .por{ font-size:40px; margin-top:6px; }
+    .preco .de{ font-size:19px; }
+    .preco .sep{ margin:13px auto; }
+    .preco .eco{ margin-top:12px; font-size:11px; padding:7px 13px; }
+    .preco .depois{ margin-top:12px; padding-top:10px; font-size:10.5px; }
+    .cta-box{ padding:14px; }
+    .cta-title{ font-size:14px; margin-bottom:9px; }
+    .cta-btn{ padding:11px; font-size:12.5px; }
+    .cta-info{ margin-top:10px; gap:5px; font-size:10.5px; }
+    .assinatura{ margin-top:16px; }
+    .humanize-logo{ height:30px; }
+    .omega-logo{ height:32px; }
+    section .lead[style]{ margin-top:14px !important; }
+    .cond{ margin-top:14px; gap:8px; grid-template-columns:1fr 1fr; }
+    .cond .c{ padding:11px; gap:10px; }
+    .cond .c b{ font-size:11.5px; }
+    .cond .c span{ font-size:10px; margin-top:3px; }
+    .cta-box{ margin-top:14px; }
+    a[href^="http"]::after{ content:""; }
+  }
+</style>
+</head>
+<body>
+
+<!--
+  PROPOSTA COMERCIAL · ÔMEGA INFRA ELÉTRICA · Humanize Marketing Digital
+
+  Seis seções: capa, Fase 1 (fundação), Fase 2 (conteúdo), Fase 3 (Google e
+  tráfego), acompanhamento e investimento. A versão para celular, com o mesmo
+  conteúdo em telas 9:16, está em stories.html.
+
+  Dados públicos citados na seção 4:
+    · Google — mais de 5 trilhões de buscas por ano (anúncio de 2025)
+    · StatCounter — cerca de 90% de participação do Google nas buscas
+    · Backlinko — menos de 1% dos cliques vão para a segunda página
+
+  Os PDFs da raiz são gerados a partir deste HTML e do stories.html por
+  ferramentas/gerar-pdfs.js. Depois de editar qualquer um dos dois, gere de novo.
+-->
+
+<script>
+/* Marca o documento como apto à animação antes da primeira pintura.
+   Se esta linha não rodar, o CSS acima deixa tudo visível. */
+if ("IntersectionObserver" in window &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  document.documentElement.className += " rv-ativo";
+}
+</script>
+
+<div class="progress" id="prog"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<defs>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-4-1L3 20l1.3-3.9a8.4 8.4 0 1 1 16.7-4.6z"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v12H4z"/><circle cx="12" cy="14" r="3.5"/></symbol>
+  <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M3 11v3a1 1 0 0 0 1 1h2l3 5V6l-3 5H4a1 1 0 0 0-1 1z"/><path d="M12 9l7-5v18l-7-5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><polyline points="2 7 12 14 22 7"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="10" y1="19" x2="14" y2="19"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></symbol>
+  <symbol id="i-repeat" viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><line x1="3" y1="21" x2="21" y2="21"/><rect x="5" y="12" width="4" height="9"/><rect x="11" y="7" width="4" height="14"/><rect x="17" y="15" width="4" height="6"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.4"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16.5 5.3a3.4 3.4 0 0 1 0 6.4"/><path d="M18 14.4A6.5 6.5 0 0 1 21.5 20"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><polygon points="12 2.6 22 8 12 13.4 2 8"/><polyline points="2 13 12 18.4 22 13"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.3"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><polygon points="12 2.6 15 9 22 9.9 17 14.7 18.2 21.6 12 18.3 5.8 21.6 7 14.7 2 9.9 9 9"/></symbol>
+  <symbol id="i-factory" viewBox="0 0 24 24"><path d="M3 21V10l5 3V10l5 3V10l5 3V21z"/><line x1="3" y1="21" x2="21" y2="21"/><path d="M18 10V4h2v6"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4h7a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4z"/><path d="M20 4h-7a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h7z"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><circle cx="17" cy="14.5" r="1.3"/></symbol>
+  <symbol id="i-sign" viewBox="0 0 24 24"><path d="M3 19c3-1 4-9 7-9s2 6 4.5 6S18 12 21 11"/><line x1="3" y1="22" x2="21" y2="22"/></symbol>
+  <symbol id="i-print" viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><rect x="3" y="9" width="18" height="8" rx="2"/><rect x="6" y="15" width="12" height="7"/></symbol>
+</defs>
+</svg>
+
+<div class="wrap">
+
+  <!-- 1 · CAPA -->
+  <section class="omega">
+    <div class="glow glow-blue" style="width:320px;height:320px; top:-120px; right:-120px;"></div>
+    <div class="glow glow-orange" style="width:230px;height:230px; bottom:-90px; left:-90px; opacity:.2;"></div>
+    <div class="lines"></div>
+    <div class="z">
+      <div class="topbar">
+        <img class="humanize-logo" src="logo-humanize-branco.png" alt="Humanize Marketing Digital">
+        <img class="omega-logo" src="logo-omega.png" alt="Ômega Infra Elétrica">
+      </div>
+
+      <span class="pill pill-orange" style="margin-top:46px;">Proposta comercial</span>
+      <h1>Ômega Infra Elétrica<br><span class="accent">Mais presença.<br>Mais oportunidades.<br>Mais negócios.</span></h1>
+      <div class="divider"></div>
+      <p class="lead">Uma estratégia integrada para fortalecer sua marca, alcançar novos compradores e ampliar as vendas em mercados estratégicos.</p>
+
+      <div class="assinatura" style="margin-top:52px;">
+        <div>
+          <div style="font-size:11px; letter-spacing:2.4px; text-transform:uppercase; color:#8fa3c4; font-weight:800;">Apresentado por</div>
+          <div style="font-size:17px; font-weight:800; color:#fff; margin-top:5px;">Humanize Marketing Digital</div>
+        </div>
+        <div>
+          <div class="baixar">
+            <a class="btn-print" href="Proposta-Omega-Humanize-celular.pdf" download data-arquivo="Proposta-Omega-Humanize-celular.pdf">
+              <svg class="icon" style="width:16px;height:16px;"><use href="#i-phone"/></svg>
+              Baixar PDF · celular
+            </a>
+            <a class="btn-print" href="Proposta-Omega-Humanize-A4.pdf" download data-arquivo="Proposta-Omega-Humanize-A4.pdf">
+              <svg class="icon" style="width:16px;height:16px;"><use href="#i-doc"/></svg>
+              Baixar PDF · A4
+            </a>
+          </div>
+          <div class="baixar-msg" id="baixarMsg" role="status"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · FASE 1 — FUNDAÇÃO -->
+  <section class="light rv">
+    <div class="z">
+      <div class="fase-cab">
+        <div class="fase-num">01</div>
+        <div>
+          <span class="eyebrow">A fundação</span>
+          <h2>Antes de publicar qualquer coisa, <span class="accent">entender o jogo</span>.</h2>
+          <div class="trilha"><i class="on"></i><i></i><i></i><span>Fase 1 de 3</span></div>
+        </div>
+      </div>
+      <p class="lead" style="margin-top:20px;">Campanha que começa pelo post é tiro no escuro. O trabalho começa por descobrir quem decide a compra de uma eletrocalha, o que a concorrência já ocupa e qual é a cara que a Ômega precisa ter para ser levada a sério por uma construtora.</p>
+
+      <div class="feat">
+        <div class="f">
+          <div class="icon-badge"><svg class="icon"><use href="#i-search"/></svg></div>
+          <b>Pesquisa de mercado</b>
+          <span>Como o setor compra infraestrutura elétrica, por onde procura e o que pesa na decisão.</span>
+        </div>
+        <div class="f">
+          <div class="icon-badge orange"><svg class="icon"><use href="#i-target"/></svg></div>
+          <b>Análise da concorrência</b>
+          <span>O que os outros fabricantes comunicam, onde estão fortes e, principalmente, onde deixaram espaço.</span>
+        </div>
+        <div class="f">
+          <div class="icon-badge"><svg class="icon"><use href="#i-users"/></svg></div>
+          <b>Persona</b>
+          <span>O retrato de quem especifica e de quem compra. Dois perfis diferentes, duas conversas diferentes.</span>
+        </div>
+        <div class="f">
+          <div class="icon-badge orange"><svg class="icon"><use href="#i-layers"/></svg></div>
+          <b>Identidade e posicionamento</b>
+          <span>A marca que a Ômega vai vestir: linguagem, paleta, tom e o lugar que ela ocupa na cabeça do comprador.</span>
+        </div>
+      </div>
+
+      <p class="remate">Nenhuma peça vai ao ar antes de sabermos para quem falamos, por que falamos e com que cara.</p>
+    </div>
+  </section>
+
+  <!-- 3 · FASE 2 — CONTEÚDO QUE ENSINA -->
+  <section class="white rv">
+    <div class="z">
+      <div class="fase-cab">
+        <div class="fase-num">02</div>
+        <div>
+          <span class="eyebrow">A marca em movimento</span>
+          <h2>O comprador não escolhe a peça. Ele compra <span class="accent">o que o engenheiro especificou</span>.</h2>
+          <div class="trilha"><i></i><i class="on"></i><i></i><span>Fase 2 de 3</span></div>
+        </div>
+      </div>
+
+      <div class="cadeia">
+        <div class="elo">
+          <div class="papel">Quem decide</div>
+          <b>Engenheiro</b>
+          <span>Especifica a peça no projeto.</span>
+        </div>
+        <div class="seta">→</div>
+        <div class="elo alvo">
+          <div class="papel">Quem compra — e é aqui que entramos</div>
+          <b>Comprador</b>
+          <span>Cota o que está na lista. Muitas vezes sem saber para que serve.</span>
+        </div>
+        <div class="seta">→</div>
+        <div class="elo">
+          <div class="papel">Quem entrega</div>
+          <b>Fornecedor</b>
+          <span>Ganha quem o comprador conhece e confia.</span>
+        </div>
+      </div>
+
+      <p class="lead" style="margin-top:22px;">Esse comprador recebe uma lista e sai cotando. Se alguém explicar para ele onde vai cada peça, por que a chapa tem aquela espessura e o que muda entre uma eletrocalha com e sem virola, ele para de comprar por preço e passa a comprar por critério. <b>É esse alguém que a Ômega vai ser.</b></p>
+
+      <div class="feat">
+        <div class="f">
+          <div class="icon-badge"><svg class="icon"><use href="#i-factory"/></svg></div>
+          <b>A fábrica funcionando</b>
+          <span>A chapa entrando, a peça saindo. Quem vê a produção entende o que está comprando — e confia.</span>
+        </div>
+        <div class="f">
+          <div class="icon-badge orange"><svg class="icon"><use href="#i-book"/></svg></div>
+          <b>Conteúdo que ensina</b>
+          <span>Onde cada peça é aplicada, para que serve e como escolher. O comprador aprende a pedir pelo nome.</span>
+        </div>
+        <div class="f">
+          <div class="icon-badge"><svg class="icon"><use href="#i-camera"/></svg></div>
+          <b>Gente, não só produto</b>
+          <span>A equipe, o chão de fábrica, o atendimento. É o que separa um fornecedor de um catálogo.</span>
+        </div>
+        <div class="f">
+          <div class="icon-badge orange"><svg class="icon"><use href="#i-repeat"/></svg></div>
+          <b>Constância</b>
+          <span>Publicação planejada, todo dia, com objetivo comercial. Marca se constrói por repetição, não por sorte.</span>
+        </div>
+      </div>
+
+      <div class="ad">
+        <div class="ad-item">
+          <div class="ad-tag agora"><svg class="icon" style="width:14px;height:14px;"><use href="#i-camera"/></svg> Hoje · Instagram</div>
+          <div class="palco"><div class="celular"><div class="tela"><img src="atual-instagram.png" alt="Perfil atual do Instagram da Ômega Infra Elétrica"><span class="ilha"></span></div></div></div>
+          <div class="ad-cap">Banner atrás de banner. <b>403 publicações para 695 seguidores</b> — esforço constante, retorno comercial baixo.</div>
+        </div>
+        <div class="ad-item">
+          <div class="ad-tag conceito"><svg class="icon" style="width:14px;height:14px;"><use href="#i-grid"/></svg> Referência de direção criativa</div>
+          <div class="palco"><div class="celular"><div class="tela"><img src="referencia-instagram.png" alt="Perfil de referência: destaques por linha de produto e vídeos de fábrica, produto e equipe"><span class="ilha"></span></div></div></div>
+          <div class="ad-cap">Destaques por <b>linha de produto</b> e vídeos com fábrica, produto e equipe. Referência de direção — os números são do perfil de referência e <b>não são previsão de resultado</b>.</div>
+        </div>
+      </div>
+
+      <p class="remate">Quando o comprador entende o que está cotando, ele para de pedir "eletrocalha" e passa a pedir Ômega.</p>
+    </div>
+  </section>
+
+  <!-- 4 · FASE 3 — SER ENCONTRADO E VENDER -->
+  <section class="dark rv">
+    <div class="glow glow-blue" style="width:320px;height:320px; top:-120px; right:-120px;"></div>
+    <div class="glow glow-orange" style="width:220px;height:220px; bottom:-80px; left:-80px; opacity:.2;"></div>
+    <div class="lines"></div>
+    <div class="z">
+      <div class="fase-cab">
+        <div class="fase-num">03</div>
+        <div>
+          <span class="eyebrow">A colheita</span>
+          <h2 style="color:#fff;">Com a marca pronta, abrimos as <span class="accent">portas de entrada</span>.</h2>
+          <div class="trilha"><i></i><i></i><i class="on"></i><span>Fase 3 de 3</span></div>
+        </div>
+      </div>
+
+      <div class="stat">
+        <div class="big">5 trilhões<small>de buscas por ano no Google</small></div>
+        <div>
+          <p>É onde o comprador profissional começa: digita o nome da peça, abre os primeiros resultados e pede cotação para quem apareceu. <b style="color:#fff;">Menos de 1% das pessoas clica em algo da segunda página</b> — quem não está na primeira não entra na lista.</p>
+          <div class="barra-share">
+            <div class="pista"><div class="cheio"></div></div>
+            <div class="leg"><span>≈ 90% das buscas do mundo passam pelo Google</span><span>90%</span></div>
+          </div>
+          <div class="fonte">Fontes: Google (mais de 5 trilhões de buscas por ano, 2025), StatCounter (participação de mercado) e Backlinko (cliques na segunda página).</div>
+        </div>
+      </div>
+
+      <div class="ad">
+        <div class="ad-item">
+          <div class="ad-tag agora"><svg class="icon" style="width:14px;height:14px;"><use href="#i-search"/></svg> Hoje · busca "eletrocalha galvanizada"</div>
+          <div class="palco"><div class="celular google"><div class="tela"><img src="google-hoje.png" alt="Resultado atual do Google para eletrocalha galvanizada, com três concorrentes patrocinados e sem a Ômega"><span class="ilha"></span></div></div></div>
+          <div class="ad-cap">Três concorrentes pagam para aparecer no topo. <b>A Ômega não está na primeira, na segunda nem na terceira página.</b></div>
+        </div>
+        <div class="ad-item">
+          <div class="ad-tag conceito"><svg class="icon" style="width:14px;height:14px;"><use href="#i-target"/></svg> Simulação · Ômega na primeira página</div>
+          <div class="palco"><div class="celular google"><div class="tela"><img src="google-conceito.png" alt="Simulação do Google com a Ômega Infra Elétrica entre os primeiros resultados"><span class="ilha"></span></div></div></div>
+          <div class="ad-cap">A Ômega na lista de quem está cotando agora. Simulação de direção — a posição depende de concorrência e orçamento; <b>o trabalho é disputar esse espaço todo mês.</b></div>
+        </div>
+      </div>
+
+      <div class="feat">
+        <div class="f">
+          <div class="icon-badge"><svg class="icon"><use href="#i-star"/></svg></div>
+          <b>Google organizado</b>
+          <span>Perfil da empresa estruturado e uma ação de avaliações com os clientes grandes, de anos de casa.</span>
+        </div>
+        <div class="f">
+          <div class="icon-badge orange"><svg class="icon"><use href="#i-globe"/></svg></div>
+          <b>Site e catálogo prontos</b>
+          <span>Fichas com informação técnica e catálogo navegável — o que falta hoje para o comprador decidir.</span>
+        </div>
+        <div class="f">
+          <div class="icon-badge"><svg class="icon"><use href="#i-search"/></svg></div>
+          <b>Google Ads</b>
+          <span>Presença na primeira página para quem já está pesquisando a peça que a Ômega fabrica.</span>
+        </div>
+        <div class="f">
+          <div class="icon-badge orange"><svg class="icon"><use href="#i-megaphone"/></svg></div>
+          <b>Tráfego pago no Instagram</b>
+          <span>Todo o conteúdo da Fase 2 impulsionado para o público certo: engenharia, construtoras, revenda e compradores.</span>
+        </div>
+      </div>
+
+      <div class="ad">
+        <div class="ad-item">
+          <div class="ad-tag agora"><svg class="icon" style="width:14px;height:14px;"><use href="#i-globe"/></svg> Hoje · Catálogo</div>
+          <img src="atual-catalogo.webp" alt="Página atual de download do catálogo, com formulário de cadastro">
+          <div class="ad-cap"><b>Seis campos, CNPJ e verificação</b> antes do primeiro produto. As 53 páginas de conteúdo técnico ficam fora do Google.</div>
+        </div>
+        <div class="ad-item">
+          <div class="ad-tag conceito"><svg class="icon" style="width:14px;height:14px;"><use href="#i-layers"/></svg> Conceito visual proposto</div>
+          <img class="inteira" src="mockup-catalogo-online.png" alt="Conceito do catálogo online da Ômega, com a linha de eletrocalhas e botão de solicitar orçamento">
+          <div class="ad-cap">Produto aberto para ser <b>encontrado no Google</b>. O cadastro continua — no "Solicitar orçamento", onde o comprador já decidiu.</div>
+        </div>
+      </div>
+
+      <span class="eyebrow" style="margin-top:30px; display:block;">E então o caminho se fecha</span>
+      <div class="fluxo">
+        <div class="passo"><div class="pn">1</div><div><b>Encontra a Ômega</b><span>Na busca, no anúncio ou no conteúdo.</span></div></div>
+        <div class="passo"><div class="pn">2</div><div><b>Entra no site</b><span>E acha a informação técnica que faltava.</span></div></div>
+        <div class="passo"><div class="pn">3</div><div><b>Pede orçamento</b><span>Já sabendo o que quer e por quê.</span></div></div>
+        <div class="passo"><div class="pn">4</div><div><b>Fala com o vendedor</b><span>A equipe da Ômega fecha a venda.</span></div></div>
+      </div>
+
+      <p class="remate">A marca atrai. O site convence. O vendedor fecha.</p>
+
+      <div class="nota">
+        <b>Transparência</b>
+        Capturas reais, sem edição; os números pertencem aos perfis mostrados e não são resultado nem previsão para a Ômega. O Google com a Ômega na primeira página e o catálogo online são simulações de direção — o catálogo usa produtos, códigos e medidas reais da Ômega.
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · ACOMPANHAMENTO -->
+  <section class="light rv">
+    <div class="z">
+      <span class="eyebrow">Acompanhamento</span>
+      <h2>Estratégia sem acompanhamento é apenas intenção. Aqui, <span class="accent">cada etapa tem direção</span>.</h2>
+      <div class="divider"></div>
+      <p class="lead">Uma vez por mês sentamos com a Ômega: o que foi feito, o que os indicadores mostram, quantos contatos chegaram e foram encaminhados — e, quando a empresa fornecer os dados de venda, o que isso virou em negócio. Saímos da reunião com as prioridades do mês seguinte definidas.</p>
+
+      <div class="duas">
+        <div class="dcol">
+          <div class="dt">Humanize</div>
+          <p>Atrai o comprador, ensina, apresenta a Ômega e faz o primeiro atendimento. Organiza a oportunidade e entrega ao vendedor certo.</p>
+        </div>
+        <div class="dcol b">
+          <div class="dt">Equipe comercial da Ômega</div>
+          <p>Conduz a negociação técnica, elabora o orçamento, acompanha o comprador e fecha a venda.</p>
+        </div>
+      </div>
+
+      <p class="remate">Não entregamos apenas publicações. Construímos, executamos e aperfeiçoamos uma estratégia orientada ao crescimento comercial.</p>
+    </div>
+  </section>
+
+  <!-- 6 · INVESTIMENTO -->
+  <section class="omega rv">
+    <div class="glow glow-blue" style="width:340px;height:340px; top:-130px; left:-120px;"></div>
+    <div class="glow glow-orange" style="width:240px;height:240px; bottom:-90px; right:-90px; opacity:.22;"></div>
+    <div class="lines"></div>
+    <div class="z">
+      <span class="eyebrow">Investimento</span>
+      <h2 style="color:#fff;">O investimento para impulsionar o <span class="accent">próximo ciclo de crescimento</span> da Ômega.</h2>
+      <div class="divider"></div>
+
+      <div class="preco">
+        <div class="de-lbl">Investimento mensal</div>
+        <div class="de">R$ 5.000,00</div>
+
+        <div class="sep"></div>
+
+        <div class="por-lbl">Nos 2 primeiros meses</div>
+        <div class="por">R$ 3.500<small>,00 /mês</small></div>
+        <div class="eco">Economia de R$ 1.500,00 por mês · 30% de desconto</div>
+
+        <div class="depois">
+          Os dois primeiros meses são o <b>período de experiência</b>. A partir do terceiro mês, o investimento passa a <b>R$ 5.000,00 por mês</b>.
+        </div>
+      </div>
+
+      <div class="cond">
+        <div class="c">
+          <svg class="icon"><use href="#i-calendar"/></svg>
+          <div><b>Contrato de experiência: 2 meses</b><span>Tempo para a estratégia sair do papel e os primeiros indicadores aparecerem.</span></div>
+        </div>
+        <div class="c">
+          <svg class="icon"><use href="#i-repeat"/></svg>
+          <div><b>Renovação por 1 ano</b><span>Encerrada a experiência, o contrato é renovado pelo período de doze meses.</span></div>
+        </div>
+        <div class="c">
+          <svg class="icon"><use href="#i-wallet"/></svg>
+          <div><b>Pagamento em duas parcelas</b><span>50% na assinatura do contrato e 50% após 15 dias.</span></div>
+        </div>
+        <div class="c">
+          <svg class="icon"><use href="#i-sign"/></svg>
+          <div><b>Assinatura digital pelo Gov.br</b><span>Contrato assinado eletronicamente, com validade jurídica, sem papel.</span></div>
+        </div>
+      </div>
+
+      <div class="nota">
+        <b>Verba de anúncios</b>
+        O valor acima corresponde à <strong>gestão e à execução da Humanize</strong>. O investimento em tráfego pago é <strong>pago pela Ômega diretamente ao Google e à Meta</strong>, com cartão da própria empresa, e é separado do honorário da agência. O valor da verba é definido em conjunto, conforme os mercados prioritários de cada período, e pode ser ajustado mês a mês — a Ômega mantém o controle do quanto investir e enxerga exatamente para onde cada real foi.
+      </div>
+
+      <p class="lead" style="margin-top:28px;">Uma parceria estratégica para fortalecer a marca, alcançar novos compradores e criar novas oportunidades de crescimento.</p>
+
+      <div class="cta-box">
+        <div class="cta-title">Vamos começar, Nilton?</div>
+        <a class="cta-btn" href="https://wa.me/5511914894352" target="_blank" rel="noopener">
+          <svg class="icon" style="width:18px;height:18px;"><use href="#i-chat"/></svg>
+          Falar no WhatsApp
+        </a>
+        <div class="cta-info">
+          <span><svg class="icon" style="width:14px;height:14px;"><use href="#i-mail"/></svg> humanizemktdigital@gmail.com</span>
+          <span><svg class="icon" style="width:14px;height:14px;"><use href="#i-phone"/></svg> (11) 91489-4352</span>
+          <span><svg class="icon" style="width:14px;height:14px;"><use href="#i-chat"/></svg> @humanizemarketingdigital</span>
+        </div>
+      </div>
+
+      <div class="assinatura">
+        <img class="humanize-logo" src="logo-humanize-branco.png" alt="Humanize Marketing Digital">
+        <img class="omega-logo" src="logo-omega.png" alt="Ômega Infra Elétrica">
+      </div>
+    </div>
+  </section>
+
+  <footer>Humanize · Marketing Digital</footer>
+
+  <div class="sticky-cta">
+    <a href="https://wa.me/5511914894352" target="_blank" rel="noopener">
+      <svg class="icon" style="width:17px;height:17px;"><use href="#i-chat"/></svg>
+      Falar com a Humanize agora
+    </a>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var semMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var prog = document.getElementById("prog");
+  if (prog && !semMovimento) {
+    var atualizar = function(){
+      var alturaRolavel = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = alturaRolavel > 0 ? (window.scrollY / alturaRolavel) * 100 : 0;
+      prog.style.width = Math.min(100, Math.max(0, pct)) + "%";
+    };
+    window.addEventListener("scroll", atualizar, {passive:true});
+    window.addEventListener("resize", atualizar);
+    atualizar();
+  }
+
+  var alvos = document.querySelectorAll(".rv");
+  if (semMovimento || !("IntersectionObserver" in window)) {
+    Array.prototype.forEach.call(alvos, function(el){ el.classList.add("on"); });
+  } else {
+    var obs = new IntersectionObserver(function(entradas){
+      entradas.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add("on"); obs.unobserve(e.target); }
+      });
+    }, {rootMargin:"0px 0px -8% 0px", threshold:0.04});
+    Array.prototype.forEach.call(alvos, function(el){ obs.observe(el); });
+  }
+
+})();
+</script>
+
+<script>
+(function(){
+  var links = document.querySelectorAll("[data-arquivo]");
+  var msg = document.getElementById("baixarMsg");
+  function aviso(t){ if (msg) msg.textContent = t; }
+  if (!links.length || !window.claude || !window.claude.use) return;
+  window.claude.use("downloads").then(function(dl){
+    if (!dl) return;
+    Array.prototype.forEach.call(links, function(a){
+      a.addEventListener("click", function(ev){
+        ev.preventDefault();
+        aviso("Preparando o arquivo…");
+        fetch(a.getAttribute("href"))
+          .then(function(r){ if (!r.ok) throw { code: "http" }; return r.blob(); })
+          .then(function(blob){ return dl.save({ filename: a.getAttribute("data-arquivo"), data: blob }); })
+          .then(function(){ aviso(""); })
+          .catch(function(e){
+            var c = e && e.code;
+            if (c === "declined") aviso("");
+            else if (c === "rate_limited") aviso("Já existe um download esperando sua confirmação.");
+            else aviso("Não deu para baixar por aqui. Abra o link da proposta numa aba própria e tente de novo.");
+          });
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
