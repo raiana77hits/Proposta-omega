@@ -11,7 +11,8 @@ Humanize Marketing Digital
 | `Proposta-Omega-Humanize-celular.pdf` | PDF das 16 telas. É o que se manda no WhatsApp. |
 | `Proposta-Omega-Humanize-A4.pdf` | PDF em seis páginas A4, para imprimir. |
 
-As duas páginas têm, na capa, botões que baixam esses PDFs prontos.
+As duas páginas têm, na capa, um botão que baixa o PDF de celular pronto. O PDF
+A4 fica no repositório e no site, mas sem botão na capa.
 
 ## Atualizar os PDFs
 
